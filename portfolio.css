@@ -1,0 +1,121 @@
+body{
+			margin: 0px;
+			padding:30px;
+			color:white;
+			background: black;
+			background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-size: cover;
+  			border:10px solid black;
+
+}
+.underline{
+			display: inline-block;
+			position: relative;
+			color: #0087ca;
+			font-size: 40px;
+		}
+		.underline:hover{
+			color: white;
+		}
+		.underline::after{
+			content: '';
+			width: 100%;
+			position: absolute;
+			transform: scaleX(0);
+			height: 2px;
+			bottom: -2px;
+			bottom: 0;
+			left: 0px;
+			background: red;
+			transform-origin: bottom right;
+			transition: transform 0.25s ease-out;
+		}
+		.underline:hover::after{
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+.container{
+	
+	padding-left:30px;
+	width:100%;
+	margin:auto;
+	border-radius: 10px 10px;
+	margin-bottom:15px;
+}
+.container img{
+	border: 2px solid grey;
+	border-radius: 10px 10px;
+	width: 50%;	
+	transition: .3s ease;
+	opacity: 1;
+  	backface-visibility: hidden;
+}
+
+.container img:hover{
+	
+	opacity: 0.4;
+	border:5px solid white;
+}
+a{
+	text-decoration: none;
+}
+.text{
+	font-size: 70px;
+}
+@media screen and (max-width: 800px) {
+	.text{
+		font-size: 30px;
+	}
+	.container{
+	
+	padding-left:10px;
+	width:100%;
+	margin:auto;
+	border-radius: 10px 10px;
+	margin-bottom:15px;
+}
+	.underline{
+			display: inline-block;
+			position: relative;
+			color: #0087ca;
+			font-size: 40px;
+		}
+		.underline:hover{
+			color: white;
+		}
+		.underline::after{
+			content: '';
+			width: 100%;
+			position: absolute;
+			transform: scaleX(0);
+			height: 2px;
+			bottom: -2px;
+			bottom: 0;
+			left: 0px;
+			background: red;
+			transform-origin: bottom right;
+			transition: transform 0.25s ease-out;
+		}
+		.underline:hover::after{
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+	body{
+			margin: 0px;
+			padding:30px;
+			color:white;
+			background: black;
+			background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-size: cover;
+  			border:10px solid black;
+
+}
+			a{
+	text-decoration: none;
+}
+
+
+
+}
