@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Connections</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #433878;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            user-select: none;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .social-icon {
+            font-size: 2rem;
+            color: #333;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        .linkedin:hover { color: #0077B5; }
+        .github:hover { color: #211F1F; }
+        .instagram:hover { color: #E4405F; }
+        .twitter:hover { color: #1DA1F2; }
+        .facebook:hover { color: #1877F2; }
+        .youtube:hover { color: #FF0000; }
+
+        @media screen and (max-width: 768px) {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #640D5F;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        h1{
+            font-size:20px;
+        }
+            .container {
+            width:60%;
+            height: auto;
+            align-items: center;
+            text-align: center;
+            background-color: ;
+            padding:px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        .social-icon {
+            font-size: 2rem;
+            color: #333;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Connect With Me</h1>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/srinadh-chintakindi-887550232/" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/" class="social-icon github"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/mr_srinadhch07/" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/SRINADHch07" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/@Srinadhch07" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</body>
+</html>

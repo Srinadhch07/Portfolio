@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SRINADH</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding:30px;
+			background: black;
+			background-image: url('../images/black.png');
+			background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-size: cover;
+  			user-select: none;
+		}
+		.underline{
+			display: inline-block;
+			position: relative;
+			color: #0087ca;
+			font-size: 70px;
+		}
+		.underline:hover{
+			color: green;
+		}
+		.underline::after{
+			content: '';
+			width: 100%;
+			position: absolute;
+			transform: scaleX(0);
+			height: 2px;
+			bottom: -2px;
+			bottom: 0;
+			left: 0px;
+			background: green;
+			transform-origin: bottom right;
+			transition: transform 0.25s ease-out;
+		}
+		.underline:hover::after{
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+		.header{
+			padding:20px;
+		}
+		h1{
+			word-spacing: 5px;
+			letter-spacing: 1px;
+			color: white;
+		}
+		.flip-box {
+			background-color: transparent;
+			width: 500px;
+			height: 500px;
+			border: 1px white;
+			border-radius: 50%;
+			perspective: 1000px;
+			margin:auto;
+			
+
+
+		}
+
+		.flip-box-inner {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			text-align: center;
+			transition: transform 0.8s;
+			transform-style: preserve-3d;
+		}
+
+		.flip-box:hover .flip-box-inner {
+			transform: rotateY(180deg);
+		}
+
+		.flip-box-front, .flip-box-back {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.flip-box-front {
+			background-color: white;
+			color: black;
+			border-radius: 50%;
+			border:2px solid black;
+			border: 3px solid white;
+		}
+
+		.flip-box-back {
+			border:1px solid black;
+			border-radius: 50%;
+			transform: rotateY(180deg);
+			border: 7px solid red;
+			background: white;
+
+
+		}
+		.flip-box-back h2{
+			letter-spacing: 10px;
+			color: red;
+			font-size: 50px;
+			font-weight: bold;
+			margin-top: -1%;
+
+
+		}
+
+		p{
+			font-family: Arial;
+			font-size: 20px;
+		}
+		span{
+			color:red;
+			font-weight: bold;
+			font-family: arial;
+		}
+		span:hover{
+			color:white;
+
+		}
+		.flip-box-back p{
+			margin-top: 35%;
+			font-family: time new roman;
+		}
+		.container
+		{
+			border: 2px solid DimGrey;
+			padding: 10px;
+			border-radius: 20px 20px;
+			color:DimGrey;
+			margin-top: 50px;
+			width: 95%;
+			height: auto;
+			margin: 10px;
+			margin-top:50px;
+
+		
+		}
+		.container:hover
+		{
+			color:white;
+			transition: 0.4s;
+			border: 2px solid white;
+		}
+
+		.left
+		{
+			float: left;
+		}
+		.center
+		{
+			width: 95%;
+		}
+		.long-width{
+			width: 95%;
+		}
+		a{
+			color: white;
+			text-decoration: none;
+		}
+		a:hover{
+			color:skyblue;
+			transition: 0.4s;
+		}
+		.text
+		{
+			text-align: center;
+			color: white;
+			margin-top: 100px;
+			font-size:25px;
+		}
+		.footer{
+			
+			width: 100%;
+			padding: px;
+			margin-bottom: 0px;
+			text-align: center;
+			bottom: 0;
+			padding-bottom: 10px;
+		}
+
+		.fa {
+			padding: 20px;
+			font-size: 30px;
+			width: 30px;
+			height:  auto;
+			text-align: center;
+			text-decoration: none;
+			margin: 5px 2px;
+			border-radius: 50%;
+			align-items: center;
+		}
+
+		.fa:hover {
+			opacity: 0.7;
+		}
+		.fa-twitter {
+		
+			margin-top: 20px;
+		}
+
+		.fa-github {
+			background: black;
+			color: white;
+		}
+		.fa-twitter {
+			background: black;
+			color: white;
+		}
+		.fa-google {
+			background: black;
+			color: white;
+		}
+		.fa-linkedin {
+			background: black;
+			color: white;
+		}
+		.fa-instagram {
+			background: black;
+			color: white;
+		}
+		.fa-snapchat-ghost {
+			background: black;
+			color: white;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		}
+		hr.solid{
+			border-top: 3px solid black;
+		}
+		header {
+			margin-top: -3%;
+            animation: fadeIn 2s ease-in-out;
+        }
+         section {
+           
+            animation: fadeInUp 2s ease-in-out;
+        }
+		
+		@keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .text1{
+        	font-size: 30px;
+        }
+
+		@media screen and (max-width: 800px) {
+		header {
+            animation: fadeIn 2s ease-in-out;
+        }
+         section {
+           
+            animation: fadeInUp 2s ease-in-out;
+        }
+		
+		@keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+		.footer{
+			
+			width: 90%;
+			padding: px;
+			margin-bottom: 0px;
+			text-align: center;
+			bottom: 0;
+			padding-bottom: 10px;
+		}
+		.text
+		{
+			text-align: center;
+			color: white;
+			margin-top: 100px;
+			font-size:10px;
+		}
+
+		.center
+		{
+			
+		}
+		.long-width{
+			width: 100%;
+		}
+
+		p{
+			font-family: Arial;
+			font-size: 15px;
+		}
+		body{
+			
+			margin: 5px;
+			padding:30px;
+			height: auto;
+			background-image: url('../images/mobile.png');
+			background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-size: cover;
+  			background-position: center;
+		}
+		body: hover{
+			
+			margin: 5px;
+			transition: 0.4s;
+		}
+		.underline{
+			display: inline-block;
+			position: relative;
+			color: #0087ca;
+			font-size: 25px;
+		}
+
+		.flip-box-back h2{
+			letter-spacing: 10px;
+			color: red;
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: -1%;
+
+
+		}
+		.container
+		{
+			border: 2px solid DimGrey;
+			padding: 10px;
+			border-radius: 20px 20px;
+			color:DimGrey;
+			margin: auto;
+			width:90%;
+			margin-top: 50px;
+
+		
+		}
+		.container:hover
+		{
+			color:white;
+			transition: 0.4s;
+			border: 2px solid white;
+		}
+		.hide{
+			display: none;
+		}
+		.flip-box {
+			background-color: transparent;
+			width: 250px;
+			height: 250px;
+			border: 1px solid black;
+			border-radius: 50%;
+			perspective: 1000px;
+			margin:auto;
+
+		}
+		.text1{
+			font-size: 20px;
+		}
+	}
+	</style>
+</head>
+<body>
+	<header>
+	<div class="header">
+		<h1 class="underline">Hey, I'm Srinadh <span style="color:red;">&#10084;</span></h1>
+		<p class="hide" style="float: right; padding-right: 100px;color: white;font-family:serif;">Python Developer | Web Designer | ML Engineering</p>
+	</div>
+	</header>
+
+	<div class="flip-box">
+		<div class="flip-box-inner">
+			<div class="flip-box-front">
+				<img src="../images/srinadh1.jpg" style="width:100%;height:100%;border-radius:50%;">
+			</div>
+			<div class="flip-box-back">
+				<p>THE NAME IS</p>
+				<h2 class="underline"><strong>SRINADH</strong></h2>
+			</div>
+		</div>
+	</div>
+	<section>
+	<div class="text" style="color: white;">
+		<pre><a href="projects.html">Projects</a>       <a href="https://brunda1.odoo.com/">Website</a>      <a href="https://wa.me/9346070083">Contact</a></pre>
+	</div>
+	<div class="container left long-width">
+		<h1 class="underline">About Me</h1>	
+		<p><span style="color:red;">A Tech-Savvy Journey: From Python to AI</span>
+		<br><br>
+		As a seasoned Python developer, I've spent countless hours crafting efficient and elegant solutions. Python's versatility and readability have made it my go-to language for a wide range of projects. Whether I'm building web applications, data analysis pipelines, or automation scripts, Python has always been my trusted companion.
+		<br><br>
+		My passion for technology has led me to explore the exciting field of Machine Learning (ML). As an ML Engineer, I've delved into various algorithms and techniques to develop intelligent systems. From building predictive models to natural language processing, ML has opened up a world of possibilities.
+		<br><br>
+		While I've primarily focused on backend development, I've also dabbled in frontend development. Understanding the nuances of HTML, CSS, and JavaScript has allowed me to create visually appealing and interactive user interfaces.
+		<br><br>
+		My curiosity about technology extends beyond coding. I'm a tech enthusiast who enjoys staying up-to-date with the latest trends and innovations. From emerging programming languages to groundbreaking AI advancements, I'm always eager to explore new horizons.
+		<br><br>
+		One area that particularly excites me is the development of Large Language Models (LLMs). LLMs have the potential to revolutionize various industries, from customer service to content creation. I'm fascinated by their ability to understand and generate human-like text, and I'm eager to see how they will continue to evolve in the years to come.
+		<br><br>
+		As a freelancer, I've had the opportunity to work on a variety of projects with clients from around the world. This experience has allowed me to develop strong problem-solving skills and the ability to adapt to different project requirements.
+		</p>
+	</div>
+	<div class="container left  ">
+		<h1 class="underline">Experience</h1>	
+		<p>
+			<span style="color:red;">Virtual Experiences</span>
+			<br><br>
+			Having successfully navigated the virtual landscape, I've gained valuable insights into the world of data and cybersecurity. My journey began at Accenture, where I honed my skills in data analytics. Through various projects, I delved into complex datasets, extracting meaningful insights to drive informed decision-making.
+			<br><br>
+			My next venture took me to TCS, where I specialized in cybersecurity analytics. In this role, I played a crucial part in safeguarding sensitive information by identifying and mitigating potential threats. I developed a deep understanding of cybersecurity best practices and leveraged advanced tools to protect digital assets.
+			<br><br>
+			As my career progressed, I took on a Senior Data Analyst position at Walmart. In this leadership role, I oversaw data analysis projects, mentored team members, and implemented innovative data-driven strategies to enhance business performance.
+			<br><br>
+			<span style="color:red;">Leveraging Freelancing Skills</span>
+			<br><br>
+			Beyond my corporate experience, I've embraced freelancing as a means to explore new opportunities and apply my expertise to diverse projects. My freelancing endeavors have primarily focused on website development and training and tuning AI models.
+			<br><br>
+			As a website developer, I have created custom websites for clients across various industries. I possess a strong understanding of web technologies, including HTML, CSS, and JavaScript, enabling me to design and develop visually appealing and functional websites.
+			<br><br>
+			Additionally, my experience in training and tuning AI models has allowed me to contribute to the advancement of artificial intelligence. I have worked on projects involving natural language processing, computer vision, and predictive analytics, helping clients optimize their AI models for specific tasks.
+			<br><br>
+			My combination of corporate experience and freelancing ventures has equipped me with a diverse skill set and a passion for leveraging technology to solve complex problems. I am committed to staying at the forefront of data analytics, cybersecurity, and AI advancements, and I am excited about the opportunities that lie ahead
+
+		</p>
+	</div>
+	<div class="container left center ">
+		<h1 class="underline" >My Skills</h1>	
+		<p>
+			<ul class="text1">
+			  <li>Frontend Designer</li>
+			  <li>ML Engineering</li>
+			  <li>Python Developer</li>
+			  <li>LLM Enthusiast</li>
+			  <li>Data Structures and Algorithms</li>
+			</ul>
+		</p>
+	</div>
+	</section>
+	<div class="footer">
+			<a href="https://www.linkedin.com/in/srinadh-chintakindi-887550232/" class="fa fa-linkedin" target="_blank"></a>
+			<a href="https://www.instagram.com/mr_srinadhch07/" class="fa fa-instagram" target="_blank"></a>
+			<a href="https://twitter.com/SRINADHch07" class="fa fa-twitter" target="_blank"></a>
+			<a href="https://github.com/Srinadhch07" class="fa fa-github" target="_blank"></a>
+			<p style="font-size: 15px;color:white;">&#169; Copyright 2023-2025 by srinadhch07.All rights are reserved.</p>
+			<p style="font-size: 20px;font-family: sans-serif;color:white;">Send an Mail :<span><a href="mailto:srinadhc07@gmail.com"> srinadhc07@gmail.com</a></span></p>
+			
+	</div>
+
+</body>
+</html>

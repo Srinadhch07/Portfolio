@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>works</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            line-height: 1.6;
+            height: 100%;
+            overflow-x: hidden;
+            user-select: none;
+        }
+        body {
+            background: linear-gradient(135deg, #FABC3F 0%, #616F39 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+        .works {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .work {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+        }
+        .work:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .work img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+        .work:hover img {
+            transform: scale(1.05);
+        }
+        .work h3 {
+            font-family: 'Playfair Display', serif;
+            color: #34495e;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .work p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        .know-more-btn, .delete-btn {
+            display: inline-block;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        .know-more-btn:before, .delete-btn:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .know-more-btn:hover:before, .delete-btn:hover:before {
+            width: 150px;
+            height: 150px;
+        }
+        .know-more-btn:hover {
+            background-color: #2980b9;
+        }
+        .delete-btn {
+            background-color: #e74c3c;
+            margin-left: 10px;
+        }
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+        .add-work {
+            margin-top: 40px;
+            text-align: center;
+        }
+        button#toggleModeBtn {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #2ecc71;
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button#toggleModeBtn:hover {
+            background-color: #27ae60;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #f9f9f9;
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            animation: modalAppear 0.6s ease;
+        }
+        @keyframes modalAppear {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+        }
+        @media (max-width: 600px) {
+            .works {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Works</h1>
+        <div id="works" class="works"></div>
+        <div class="add-work">
+            <button id="toggleModeBtn">Add New work</button>
+        </div>
+    </div>
+
+    <div id="addworkModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New work</h2>
+            <input type="password" id="passcode" placeholder="Enter passcode">
+            <input type="text" id="workName" placeholder="work Name">
+            <input type="text" id="imageUrl" placeholder="Image URL">
+            <textarea id="workDescription" placeholder="work Description"></textarea>
+            <input type="text" id="workLink" placeholder="work Link">
+            <button id="submitwork" class="know-more-btn">Add work</button>
+        </div>
+    </div>
+
+    <script>
+        let works = JSON.parse(localStorage.getItem('works')) || [];
+        let isDeleteMode = false;
+
+        function displayworks() {
+            const worksContainer = document.getElementById('works');
+            worksContainer.innerHTML = '';
+            works.forEach((work, index) => {
+                const workElement = document.createElement('div');
+                workElement.classList.add('work');
+                workElement.innerHTML = `
+                    <img src="${work.imageUrl}" alt="${work.name}">
+                    <h3>${work.name}</h3>
+                    <p>${work.description}</p>
+                    <a href="${work.link}" target="_blank" class="know-more-btn">Know More</a>
+                    ${isDeleteMode ? `<button class="delete-btn" data-index="${index}">Delete</button>` : ''}
+                `;
+                worksContainer.appendChild(workElement);
+            });
+
+            if (isDeleteMode) {
+                document.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = this.getAttribute('data-index');
+                        deletework(index);
+                    });
+                });
+            }
+        }
+
+        function generateFakeOTP() {
+            return "031121";
+        }
+
+        function checkOTP() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const otp = prompt("An OTP has been sent to your registered device. Please enter the OTP:");
+                    if (otp === "031121") {
+                        resolve(true);
+                    } else {
+                        alert("Incorrect OTP. Action cancelled.");
+                        resolve(false);
+                    }
+                }, 1000);
+            });
+        }
+
+        async function deletework(index) {
+            const passcode = prompt("Enter passcode to delete this work:");
+            if (passcode === "deletethiswork") {
+                alert("Passcode correct. Sending OTP for verification...");
+                const otpCorrect = await checkOTP();
+                if (otpCorrect) {
+                    works.splice(index, 1);
+                    localStorage.setItem('works', JSON.stringify(works));
+                    displayworks();
+                    alert("work deleted successfully.");
+                }
+            } else {
+                alert("Incorrect passcode. work not deleted.");
+            }
+        }
+
+        displayworks();
+
+        const modal = document.getElementById('addworkModal');
+        const toggleModeBtn = document.getElementById('toggleModeBtn');
+        const span = document.getElementsByClassName('close')[0];
+        const submitBtn = document.getElementById('submitwork');
+
+        toggleModeBtn.onclick = () => {
+            if (isDeleteMode) {
+                isDeleteMode = false;
+                toggleModeBtn.textContent = 'Add New work';
+                toggleModeBtn.style.backgroundColor = '#2ecc71';
+            } else {
+                isDeleteMode = true;
+                toggleModeBtn.textContent = 'Cancel Delete Mode';
+                toggleModeBtn.style.backgroundColor = '#e74c3c';
+            }
+            displayworks();
+        };
+
+        span.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        submitBtn.onclick = async () => {
+            const passcode = document.getElementById('passcode').value;
+            if (passcode !== 'addthiswork') {
+                alert('Incorrect passcode');
+                return;
+            }
+
+            alert("Passcode correct. Sending OTP for verification...");
+            const otpCorrect = await checkOTP();
+            if (!otpCorrect) return;
+
+            const name = document.getElementById('workName').value;
+            const imageUrl = document.getElementById('imageUrl').value;
+            const description = document.getElementById('workDescription').value;
+            const link = document.getElementById('workLink').value;
+
+            if (name && imageUrl && description && link) {
+                works.unshift({ name, imageUrl, description, link });
+                localStorage.setItem('works', JSON.stringify(works));
+                displayworks();
+                modal.style.display = "none";
+                
+                // Clear input fields
+                document.getElementById('passcode').value = '';
+                document.getElementById('workName').value = '';
+                document.getElementById('imageUrl').value = '';
+                document.getElementById('workDescription').value = '';
+                document.getElementById('workLink').value = '';
+                
+                alert("work added successfully.");
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+        // Add event listener for the "Add New work" button
+        document.getElementById('toggleModeBtn').addEventListener('click', function() {
+            if (!isDeleteMode) {
+                modal.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
