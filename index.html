@@ -1,426 +1,309 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>SRINADH</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style type="text/css">
-		body{
-			margin: 0px;
-			padding:30px;
-			background: black;
-			background-image: url('black.png');
-			background-repeat: no-repeat;
-  			background-attachment: fixed;
-  			background-size: cover;
-
-		}
-		.underline{
-			display: inline-block;
-			position: relative;
-			color: #0087ca;
-			font-size: 70px;
-		}
-		.underline:hover{
-			color: green;
-		}
-		.underline::after{
-			content: '';
-			width: 100%;
-			position: absolute;
-			transform: scaleX(0);
-			height: 2px;
-			bottom: -2px;
-			bottom: 0;
-			left: 0px;
-			background: green;
-			transform-origin: bottom right;
-			transition: transform 0.25s ease-out;
-		}
-		.underline:hover::after{
-			transform: scaleX(1);
-			transform-origin: bottom left;
-		}
-		.header{
-			padding:20px;
-		}
-		h1{
-			word-spacing: 5px;
-			letter-spacing: 1px;
-			color: white;
-		}
-		.flip-box {
-			background-color: transparent;
-			width: 500px;
-			height: 500px;
-			border: 1px white;
-			border-radius: 50%;
-			perspective: 1000px;
-			margin:auto;
-			
-
-
-		}
-
-		.flip-box-inner {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			border-radius: 50%;
-			text-align: center;
-			transition: transform 0.8s;
-			transform-style: preserve-3d;
-		}
-
-		.flip-box:hover .flip-box-inner {
-			transform: rotateY(180deg);
-		}
-
-		.flip-box-front, .flip-box-back {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			-webkit-backface-visibility: hidden;
-			backface-visibility: hidden;
-		}
-
-		.flip-box-front {
-			background-color: white;
-			color: black;
-			border-radius: 50%;
-			border:2px solid black;
-			border: 3px solid white;
-		}
-
-		.flip-box-back {
-			border:1px solid black;
-			border-radius: 50%;
-			transform: rotateY(180deg);
-			border: 7px solid red;
-			background: white;
-
-
-		}
-		.flip-box-back h2{
-			letter-spacing: 10px;
-			color: red;
-			font-size: 50px;
-			font-weight: bold;
-			margin-top: -1%;
-
-
-		}
-
-		p{
-			font-family: Arial;
-			font-size: 20px;
-		}
-		span{
-			color:red;
-			font-weight: bold;
-			font-family: arial;
-		}
-		span:hover{
-			color:white;
-
-		}
-		.flip-box-back p{
-			margin-top: 35%;
-			font-family: time new roman;
-		}
-		.container
-		{
-			border: 2px solid DimGrey;
-			padding: 10px;
-			border-radius: 20px 20px;
-			color:DimGrey;
-			margin-top: 50px;
-			width: 95%;
-			height: auto;
-			margin: 10px;
-			margin-top:50px;
-
-		
-		}
-		.container:hover
-		{
-			color:white;
-			transition: 0.4s;
-			border: 2px solid white;
-		}
-
-		.left
-		{
-			float: left;
-		}
-		.center
-		{
-			width: 95%;
-		}
-		.long-width{
-			width: 95%;
-		}
-		a{
-			color: dimgrey;
-			text-decoration: none;
-		}
-		a:hover{
-			color:white;
-			transition: 0.4s;
-		}
-		.text
-		{
-			text-align: center;
-			color: dimgrey;
-			margin-top: 100px;
-			font-size:25px;
-		}
-		.footer{
-			
-			width: 100%;
-			padding: px;
-			margin-bottom: 0px;
-			text-align: center;
-			bottom: 0;
-			padding-bottom: 10px;
-		}
-
-		.fa {
-			padding: 20px;
-			font-size: 30px;
-			width: 30px;
-			height:  auto;
-			text-align: center;
-			text-decoration: none;
-			margin: 5px 2px;
-			border-radius: 50%;
-			align-items: center;
-		}
-
-		.fa:hover {
-			opacity: 0.7;
-		}
-		.fa-twitter {
-		
-			margin-top: 20px;
-		}
-
-		.fa-github {
-			background: black;
-			color: white;
-		}
-		.fa-twitter {
-			background: black;
-			color: white;
-		}
-		.fa-google {
-			background: black;
-			color: white;
-		}
-		.fa-linkedin {
-			background: black;
-			color: white;
-		}
-		.fa-instagram {
-			background: black;
-			color: white;
-		}
-		.fa-snapchat-ghost {
-			background: black;
-			color: white;
-			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-		}
-		hr.solid{
-			border-top: 3px solid black;
-		}
-		header {
-            animation: fadeIn 2s ease-in-out;
-        }
-         section {
-           
-            animation: fadeInUp 2s ease-in-out;
-        }
-		
-		@keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRINADH's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-
-		@media screen and (max-width: 800px) {
-		header {
-            animation: fadeIn 2s ease-in-out;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background-color: #121212;
+            position: relative;
+            overflow-x: hidden;
+            user-select: none;
+            font-family: time new roman;
         }
-         section {
-           
-            animation: fadeInUp 2s ease-in-out;
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: fadeInBackground 3s ease-in forwards;
+            z-index: -1;
         }
-		
-		@keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        @keyframes fadeInBackground {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        header {
+            background-color: rgba(30, 30, 30, 0.0);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-		.footer{
-			
-			width: 90%;
-			padding: px;
-			margin-bottom: 0px;
-			text-align: center;
-			bottom: 0;
-			padding-bottom: 10px;
-		}
-		.text
-		{
-			text-align: center;
-			color: dimgrey;
-			margin-top: 100px;
-			font-size:10px;
-		}
 
-		.center
-		{
-			
-		}
-		.long-width{
-			width: 100%;
-		}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .underline{
+            display: inline-block;
+            position: relative;
+            color: white;
+            font-size: 40px;
+        }
+        .underline:hover{
+            color: #4F75FF;
+        }
+        .underline::after{
+            content: '';
+            width: 100%;
+            position: absolute;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            bottom: 0;
+            left: 0px;
+            background: green;
+            transform-origin: bottom right;
+            transition: transform 0.55s ease-out;
+        }
+        .underline:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
-		p{
-			font-family: Arial;
-			font-size: 15px;
-		}
-		body{
-			
-			margin: 5px;
-			padding:30px;
-			height: auto;
-			background-image: url('HomeWallpaper-mobile.png');
-			background-repeat: no-repeat;
-  			background-attachment: fixed;
-  			background-size: cover;
-		}
-		body: hover{
-			
-			margin: 5px;
-			transition: 0.4s;
-		}
-		.underline{
-			display: inline-block;
-			position: relative;
-			color: #0087ca;
-			font-size: 25px;
-		}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-		.flip-box-back h2{
-			letter-spacing: 10px;
-			color: red;
-			font-size: 20px;
-			font-weight: bold;
-			margin-top: -1%;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            font-size: 25px;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4F75FF;
+        }
+
+        .hero {
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            animation: fadeInContent 2s ease-in forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hide-mobile{
+        	display: none;
+        }
+        @media screen and (max-width: 768px) {
+        .hide{
+            display: none;
+        }
+        .hide-mobile{
+        	display: block;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/mobile.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: fadeInBackground 3s ease-in forwards;
+            z-index: -1;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: bottom;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.0);
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                margin: 10px;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .nav-links li {
+                margin: 10px 0 ;
+                padding: 5px;
 
 
-		}
-		.container
-		{
-			border: 2px solid DimGrey;
-			padding: 10px;
-			border-radius: 20px 20px;
-			color:DimGrey;
-			margin: auto;
-			width:90%;
-			margin-top: 50px;
+            }
+            .nav-links a{
+            	border: 2px solid white;
+            	padding: 5px;
+            	border-radius: 5px;
+            	margin:8px;
+            }
+            .nav-links a:hover{
+            	border: 2px solid skyblue;
+            }
 
-		
-		}
-		.container:hover
-		{
-			color:white;
-			transition: 0.4s;
-			border: 2px solid white;
-		}
-		.hide{
-			display: none;
-		}
-		.flip-box {
-			background-color: transparent;
-			width: 250px;
-			height: 250px;
-			border: 1px solid black;
-			border-radius: 50%;
-			perspective: 1000px;
-			margin:auto;
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
 
-		}
-	}
-	</style>
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+              .header a {
+			    float: none;
+			    display: block;
+			    text-align: left;
+			  }
+			  
+			  .header-right {
+			    float: none;
+			  }
+			}
+			a{
+				text-decoration: none;
+				color:skyblue;
+				margin:15px 5px;
+				font-size: 30px;
+
+			}
+			a:hover{
+				color:red;
+			}
+			.mobile-header{
+				align-items: center;
+				text-align: center;
+
+
+			}
+        }
+    </style>
 </head>
 <body>
-	<header>
-	<div class="header">
-		<h1 class="underline">Hey, I'm Srinadh <span style="color:red;">&#10084;</span></h1>
-		<p class="hide" style="float: right; padding-right: 100px;color: white;font-family:serif;">Python Developer | Web Designer | ML Engineering</p>
-	</div>
-	</header>
+    <header>
+        <nav>
+           <div class="logo hide"><img style="width: 70px; height: 70px;border-radius: 50%;" src="images/srinadh1.jpg"></div>
+           <div class="logo hide-mobile"><img style="width: 200px; height: 200px;border-radius: 50%;" src="images/srinadh1.jpg"></div>
 
-	<div class="flip-box">
-		<div class="flip-box-inner">
-			<div class="flip-box-front">
-				<img src="pf_image.jpg" style="width:100%;height:100%;border-radius:50%;">
-			</div>
-			<div class="flip-box-back">
-				<p>ThE NAME IS</p>
-				<h2 class="underline"><strong>SRINADH</strong></h2>
-			</div>
-		</div>
-	</div>
-	<section>
-	<div class="text">
-		<pre><a href="projects.html">Projects</a>       <a href="https://brunda1.odoo.com/">Website</a>      <a href="https://wa.me/9346070083">Contact</a></pre>
-	</div>
-	<div class="container left long-width">
-		<h1 class="underline">About Me</h1>	
-		<p>Hi I'm <span>Srinadh Chintakindi</span>, as a 20-year-old enthusiast driven by a passion for transforming ideas into tangible solutions through coding, I possess a strong background in web development, Python programming, and machine learning. 
-		<br><br>I specialize in crafting robust and scalable solutions that meet diverse needs. 
-		<br><br>My dedication extends to contributing to open-source projects, where I actively engage in collaborative efforts to enhance the broader technological landscape. Continuously embracing emerging technologies, I remain committed to staying abreast of the latest advancements, ensuring my skill set remains relevant and adaptable to evolving industry standards.
+            <ul class="nav-links hide">
+                <li><a href="src/projects.html">Projects</a>
+                </li><li><a href="src/works.html">Works</a></li>
+                </li><li><a href="https://brunda1.odoo.com/">Site</a></li>
+                <li><a href="src/hub.html">Hub</a></li>
+                <li><a href="src/about.html">About</a></li>
+                <li><a href="src/socials.html">Socials</a></li>
+                <li><a href="mailto:srinadhc07@gmail.com">Contact</a></li>
+            </ul>
 
-		</p>
-	</div>
-	<div class="container left  ">
-		<h1 class="underline">Experience</h1>	
-		<p>
-		As a Python Developer Intern at CodSoft, I contributed to the development and testing of various projects using Python.
-		<br><br>In addition, I completed the Cybersecurity Analyst Job Simulation course from Tata Consultancy Services, which gave me valuable insights and experience in the field of cybersecurity.
-		<br><br>I also earned the Codsoft Certified Python Programming credential, which demonstrates my proficiency and skills in Python programming. 
+        </nav>
+       <div class="mobile-header hide-mobile" style="margin-top: 46%;">
+       <a href="src/projects.html">Projects</a>
+       <a href="src/works.html">Works</a>
+       <a href="https://brunda1.odoo.com/">Site</a>
+       <br>
+       <a href="src/hub.html">Hub</a>
+       <a href="src/about.html">About</a>
+       <a href="src/socials.html">socials</a>
+       </div>
 
-		</p>
-	</div>
-	<div class="container left center ">
-		<h1 class="underline">My Skills</h1>	
-		<p>
-			I'm a versatile professional with a strong foundation in web development, proficient in languages like Python and Java. 
-			<br><br>My passion lies in exploring the realms of machine learning, where I'm actively honing my skills to make meaningful contributions. 
-			<br><br>Apart from my technical expertise, I'm an avid supporter of open-source projects, leveraging my knowledge to give back to the community. With a blend of coding prowess and a penchant for innovation, I'm always eager to take on new challenges and create impactful solutions.
 
-		</p>
-	</div>
-	</section>
-	<div class="footer">
-			<a href="https://www.linkedin.com/in/srinadh-ch-887550232/" class="fa fa-linkedin" target="_blank"></a>
-			<a href="https://www.instagram.com/mr_srinadhch07/" class="fa fa-instagram" target="_blank"></a>
-			<a href="https://twitter.com/SRINADHch07" class="fa fa-twitter" target="_blank"></a>
-			<a href="https://github.com/Srinadhch07" class="fa fa-github" target="_blank"></a>
-			<p style="font-size: 15px;color:white;">&#169; Copyright 2023-2025 by srinadhch07.All rights are reserved.</p>
-			<p style="font-size: 20px;font-family: sans-serif;color:white;">Send an Mail :<span><a href="mailto:srinadhc07@gmail.com"> srinadhc07@gmail.com</a></span></p>
-			
-	</div>
+    </header>
 
+    <main>
+        <section class="hero ">
+            <div class="hero-content hide">
+                <h1 class="underline">SRINADH CHINTAKINDI</h1>
+                <ul class="nav-links" style="color:red;">
+	                <li>Python Developer</li>
+	                <li>ML Engineer</li>
+	                <li>Freelancer   </li>
+	                <li>AI Enthusiast  </li>	                
+            	</ul>
+                <p>"Passionate about bridging the gap between theory and reality through the power of technology."</p>
+            <img src="images/logo.webp" style="width: 200px; height: 150px;">
+
+            </div>
+        </section>
+                
+
+    </main>
 </body>
 </html>
