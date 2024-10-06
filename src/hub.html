@@ -137,10 +137,16 @@
         const hub = [
             // Example tool (you can remove this and add your own)
             {
-                name: "Example tool",
-                imageUrl: "../images/bg.png",
-                description: "This is an example tool description.",
-                link: "https://example.com"
+                name: "StudyBot",
+                imageUrl: "../images/hub/Studybot.png",
+                description: "StudyBot is a cutting-edge AI-driven platform designed to significantly enhance exam preparation. By meticulously analyzing vast datasets of past question papers and subject syllabi, StudyBot employs advanced algorithms to predict potential exam questions with remarkable accuracy. This innovative approach empowers students to focus their studies on the most relevant topics, thereby optimizing their learning and increasing their chances of success.",
+                link: "https://huggingface.co/spaces/srinadhch07/DocBot"
+            },
+            {
+                name: "Chat Summarizer",
+                imageUrl: "../images/hub/WCS.png",
+                description: "We all love sharing funny moments or juicy gossip from our chats with friends. But copying and pasting long conversations or screenshots can be tedious, especially if you want your friend to understand the context.This chat summarizer is your solution! It acts like your personal cliff-notes generator for chats. Just paste your chat history, and the AI will analyze it, summarizing the key points and highlights in a clear and concise way.",
+                link: "https://huggingface.co/spaces/srinadhch07/Chat-Summarizer"
             },
             // Add more hub here
         ];
@@ -155,7 +161,7 @@
                     <img src="${tool.imageUrl}" alt="${tool.name}">
                     <h3>${tool.name}</h3>
                     <p>${tool.description}</p>
-                    <a href="${tool.link}" target="_blank" class="know-more-btn">Know More</a>
+                    <a href="${tool.link}" target="_blank" class="know-more-btn">Try it</a>
                 `;
                 hubContainer.appendChild(toolElement);
             });
