@@ -156,7 +156,23 @@
         .hide-mobile{
         	display: none;
         }
+
+
+
+
+
         @media screen and (max-width: 768px) {
+
+
+
+
+
+
+
+
+
+
+
         .hide{
             display: none;
         }
@@ -170,7 +186,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/mobile.png'); 
+            background-image: url('images/5.png'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -179,12 +195,13 @@
             z-index: -1;
         }
         .hero {
-            height: 100vh;
+            margin-top: 50%;
+            height: auto;
             display: flex;
             align-items: bottom;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 1rem;
             background-color: rgba(0, 0, 0, 0.0);
         }
         .hero-content h1 {
@@ -207,16 +224,16 @@
             }
 
             .nav-links li {
-                margin: 10px 0 ;
-                padding: 5px;
+
+                margin: 5px 0px;
+                padding: 0px;
+                letter-spacing: 7px;
 
 
             }
             .nav-links a{
-            	border: 2px solid white;
-            	padding: 5px;
-            	border-radius: 5px;
-            	margin:8px;
+                font-size: 20px;
+            	
             }
             .nav-links a:hover{
             	border: 2px solid skyblue;
@@ -255,14 +272,16 @@
 
 
 			}
+
+
         }
     </style>
 </head>
 <body>
-    <header>
+    <header   class="hide">
         <nav>
            <div class="logo hide"><img style="width: 70px; height: 70px;border-radius: 50%;" src="images/srinadh1.jpg"></div>
-           <div class="logo hide-mobile"><img style="width: 200px; height: 200px;border-radius: 50%;" src="images/srinadh1.jpg"></div>
+           
 
             <ul class="nav-links hide">
                 <li><a href="src/projects.html">Projects</a>
@@ -275,24 +294,13 @@
             </ul>
 
         </nav>
-       <div class="mobile-header hide-mobile" style="margin-top: 46%;">
-       <a href="src/projects.html">Projects</a>
-       <a href="src/works.html">Works</a>
-       <a href="https://brunda1.odoo.com/">Site</a>
-       <br>
-       <a href="src/hub.html">Hub</a>
-       <a href="src/about.html">About</a>
-       <a href="src/socials.html">socials</a>
-       </div>
-
-
     </header>
 
-    <main>
-        <section class="hero ">
-            <div class="hero-content hide">
+    <main  class="hide">
+        <section class="hero">
+            <div class="hero-content hide" >
                 <h1 class="underline">SRINADH CHINTAKINDI</h1>
-                <ul class="nav-links" style="color:red;">
+                <ul class="nav-links" style="color: red;">
 	                <li>Python Developer</li>
 	                <li>ML Engineer</li>
 	                <li>Freelancer   </li>
@@ -300,11 +308,34 @@
             	</ul>
                 <p>"Passionate about bridging the gap between theory and reality through the power of technology."</p>
             <img src="images/logo.webp" style="width: 200px; height: 150px;">
-
             </div>
         </section>
-                
+    </main>
+    <header class="hide-mobile">
+        <div class="hero-content">
+            <h2 class="underline">SRINADH</h2>
+            <h2 class="underline">CHINTAKINDI</h2>          
+        </div>
+    </header>
+    <main class="hide-mobile">
+        <div class="hero">
+            <div class="hero-content">
+                <ul class="nav-links hide-mobile">
+                    <li><a href="src/projects.html">Projects</a>
+                    </li><li><a href="src/works.html">Works</a></li>
+                    </li><li><a href="https://brunda1.odoo.com/">Site</a></li>
+                    <li><a href="src/hub.html">Hub</a></li>
+                    <li><a href="src/about.html">About</a></li>
+                    <li><a href="src/socials.html">Socials</a></li>
+                    <li><a href="mailto:srinadhc07@gmail.com">Contact</a></li>
+                    <li><img src="images/logo.webp" style="width: 200px; height: 150px;"></li>
 
+
+                </ul>
+            </div>
+
+       </div>
+        
     </main>
 </body>
 </html>
